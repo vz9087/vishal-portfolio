@@ -253,6 +253,7 @@
     if(localStorage.getItem('darkMode') === 'enabled') {
         document.body.classList.add('dark-mode');
         darkModeToggle.checked = true;
+        darkModeIcon.textContent = "🔆";
     }
 
     // Toggle dark mode
@@ -260,9 +261,11 @@
         if(darkModeToggle.checked) {
             document.body.classList.add('dark-mode');
             localStorage.setItem('darkMode', 'enabled');
+            darkModeIcon.textContent = "🔆";
         } else {
             document.body.classList.remove('dark-mode');
             localStorage.setItem('darkMode', 'disabled');
+            darkModeIcon.textContent = "🌙";
         }
     });
 </script>
