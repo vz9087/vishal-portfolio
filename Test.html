@@ -6,6 +6,7 @@
     <title>Vishal V P - Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <style>
         body { transition: 0.3s; }
         .dark-mode { background-color: #121212; color: #ffffff; }
@@ -18,24 +19,23 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" data-aos="fade-down" data-aos-duration="1000">
     <div class="container">
         <a class="navbar-brand" href="#">Vishal V P</a>
         <button id="darkModeToggle" class="btn btn-outline-light" onclick="toggleDarkMode()">🌙 Dark Mode</button>
     </div>
 </nav>
 
-
 <!-- Hero Section -->
-<section class="container text-center my-5">
+<section class="container text-center my-5" data-aos="fade-up" data-aos-duration="1000">
     <h1>Vishal V P</h1>
     <h4>BE CSE Student, Jain Institute of Technology, Davangere</h4>
     <p>Passionate about solving real-world problems through programming, software development, and teamwork.</p>
     <a href="resume.pdf" class="btn btn-success" download>📄 Download Resume</a>
 </section>
 
-<!-- About Me -->
-<section class="container my-5" id="about">
+<!-- About Me Section with Scroll Animation -->
+<section class="container my-5" id="about" data-aos="fade-up" data-aos-duration="1000">
     <h2 class="text-center">About Me</h2>
     <p>
         Hello! I'm Vishal V P, a BE CSE student at Jain Institute of Technology, Davangere. My journey in the world of Computer Science is driven by an unrelenting curiosity and passion for solving real-world problems with innovative and efficient technological solutions. 
@@ -46,8 +46,8 @@
     </p>
 </section>
 
-<!-- Skills & Experience Section -->
-<section class="container my-5">
+<!-- Skills & Experience Section with Scroll Animation -->
+<section class="container my-5" data-aos="fade-up" data-aos-duration="1000">
     <h2 class="text-center">Skills & Experience</h2>
     <div class="table-responsive">
         <table class="table table-bordered table-striped text-center">
@@ -59,7 +59,6 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Programming Languages -->
                 <tr>
                     <td rowspan="5"><strong>Programming Languages</strong></td>
                     <td>C++</td>
@@ -82,7 +81,6 @@
                     <td>2 years</td>
                 </tr>
 
-                <!-- Frameworks & Tools -->
                 <tr>
                     <td rowspan="3"><strong>Frameworks & Tools</strong></td>
                     <td>Jupyter Notebook</td>
@@ -97,7 +95,6 @@
                     <td>3+ years</td>
                 </tr>
 
-                <!-- Data & Other Skills -->
                 <tr>
                     <td><strong>Data & Analysis</strong></td>
                     <td>Data Manipulation/Organizing</td>
@@ -108,14 +105,12 @@
     </div>
 </section>
 
-
-
-<!-- Projects Section -->
-<section class="container my-5" id="projects">
+<!-- Projects Section with Scroll Animation -->
+<section class="container my-5" id="projects" data-aos="fade-up" data-aos-duration="1000">
     <h2 class="text-center">Projects</h2>
     <div class="row">
         <div class="col-md-4">
-            <div class="card project-card">
+            <div class="card project-card" data-aos="zoom-in" data-aos-duration="1000">
                 <img src="project1.jpg" class="card-img-top" alt="Project 1">
                 <div class="card-body">
                     <h5 class="card-title">Project 1</h5>
@@ -125,7 +120,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card project-card">
+            <div class="card project-card" data-aos="zoom-in" data-aos-duration="1000">
                 <img src="project2.jpg" class="card-img-top" alt="Project 2">
                 <div class="card-body">
                     <h5 class="card-title">Project 2</h5>
@@ -135,7 +130,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card project-card">
+            <div class="card project-card" data-aos="zoom-in" data-aos-duration="1000">
                 <img src="project3.jpg" class="card-img-top" alt="Project 3">
                 <div class="card-body">
                     <h5 class="card-title">Project 3</h5>
@@ -147,8 +142,8 @@
     </div>
 </section>
 
-<!-- Contact Section -->
-<section class="container my-5" id="contact">
+<!-- Contact Section with Scroll Animation -->
+<section class="container my-5" id="contact" data-aos="fade-up" data-aos-duration="1000">
     <h2 class="text-center">Contact Me</h2>
     <ul class="list-unstyled text-center">
         <li>Email: <a href="mailto:vishalvpurshan360@gmail.com">vishalvpurshan360@gmail.com</a></li>
@@ -184,6 +179,13 @@
             toggleBtn.textContent = "🌙 Dark Mode";
         }
     }
+</script>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init();
 </script>
     
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
