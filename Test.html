@@ -95,18 +95,50 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#blog">Blog</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="settingsToggle"><i class="fas fa-cogs"></i> Settings ⚒️</a>
+                </li>
             </ul>
-        </div>
-        
-        <!-- Dark Mode Toggle -->
-        <div class="form-check form-switch text-white">
-            <input class="form-check-input" type="checkbox" id="darkModeToggle">
-            <label class="form-check-label" for="darkModeToggle">
-                <span id = "darkModeIcon">🌙</span>
-            </label>
         </div>
     </div>
 </nav>
+        
+<!-- Dark Mode Toggle -->
+<div class="form-check form-switch text-white">
+    <input class="form-check-input" type="checkbox" id="darkModeToggle">
+    <label class="form-check-label" for="darkModeToggle">
+        <span id = "darkModeIcon">🌙</span>
+    </label>
+</div>
+    
+<!-- Settings Panel -->
+<div id="settingsPanel" class="settings-panel">
+    <div class="settings-container">
+        <h3>Font Settings</h3>
+
+        <!-- Font Size Control -->
+        <div class="mb-3">
+            <label for="fontSizeControl" class="control-label">Font Size</label>
+            <button id="fontSizeIncrease" class="btn btn-secondary">A+</button>
+            <button id="fontSizeDecrease" class="btn btn-secondary">A-</button>
+        </div>
+
+        <!-- Font Color Control -->
+        <div class="mb-3">
+            <label for="fontColorControl" class="control-label">Font Color</label>
+            <input type="color" id="fontColorControl" value="#000000">
+        </div>
+
+        <!-- Font Shadow Intensity Control -->
+        <div class="mb-3">
+            <label for="shadowIntensityControl" class="control-label">Shadow Intensity</label>
+            <input type="range" id="shadowIntensityControl" min="0" max="10" value="2" step="0.1">
+        </div>
+
+        <button class="btn btn-danger" id="closeSettings">Close Settings</button>
+    </div>
+</div>
+
 
 <!-- Hero Section -->
 <section class="container text-center my-5" id="home">
@@ -248,7 +280,6 @@
     </a>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     const darkModeToggle = document.getElementById('darkModeToggle');
     const darkModeIcon = document.getElementById('darkModeIcon');
@@ -272,7 +303,50 @@
             darkModeIcon.textContent = "🌙";
         }
     });
+
+    // Font Size Controls
+    const contentText = document.getElementById('contentText');
+    let fontSize = 16;
+
+    document.getElementById('fontSizeIncrease').addEventListener('click', () => {
+        fontSize += 2;
+        contentText.style.fontSize = fontSize + 'px';
+    });
+
+    document.getElementById('fontSizeDecrease').addEventListener('click', () => {
+        if (fontSize > 10) {
+            fontSize -= 2;
+            contentText.style.fontSize = fontSize + 'px';
+        }
+    });
+
+    // Font Color Control
+    document.getElementById('fontColorControl').addEventListener('input', (event) => {
+        contentText.style.color = event.target.value;
+    });
+
+    // Font Shadow Intensity Control
+    document.getElementById('shadowIntensityControl').addEventListener('input', (event) => {
+        const intensity = event.target.value;
+        contentText.style.textShadow = `${intensity}px ${intensity}px ${intensity / 2}px rgba(0, 0, 0, 0.7)`;
+    });
+
+    // Settings Panel Toggle
+    const settingsPanel = document.getElementById('settingsPanel');
+    const settingsToggle = document.getElementById('settingsToggle');
+    const closeSettings = document.getElementById('closeSettings');
+
+    settingsToggle.addEventListener('click', () => {
+        settingsPanel.style.display = 'block';
+    });
+
+    closeSettings.addEventListener('click', () => {
+        settingsPanel.style.display = 'none';
+    });
+    
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
